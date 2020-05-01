@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationInsert"> <!-- Adds various organs to the base human -->
+				<xpath>Defs/BodyDef[defName="Human"]/corePart/parts/li[def="Waist"]</xpath>
+                <order>Prepend</order>
+                
+				<value>
+
+       			 <li>
+         			 <def>PituitaryGland</def>
+		  			<customLabel>Pituitary Gland</customLabel>
+          			<coverage>0.01</coverage>
+         			<depth>Inside</depth>
+        		  <groups>
+          		  <li>Neck</li>
+         		 </groups>
+       			 </li>
+			
+            	</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+
+</Patch>

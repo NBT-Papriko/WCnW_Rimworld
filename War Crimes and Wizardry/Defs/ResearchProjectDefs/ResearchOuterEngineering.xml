@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <ResearchProjectDef>
+    <defName>EldritchContact</defName>
+    <label>Eldritch Contact</label>
+    <tab>WCNWizardry</tab>
+    <description>In our desperation in the Rim, we began to look beyond the stars for answers. Allows building the Star Mapping Contraption.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Machining</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+  </ResearchProjectDef>
+
+    <ResearchProjectDef>
+    <defName>EldritchPlaceholder</defName>
+    <label>Eldritch Placeholder </label>
+    <tab>WCNWizardry</tab>
+    <description>This will one day be something.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>EldritchContact</li>
+    </prerequisites>
+<!--    <requiredResearchFacilities>
+    <li>Eldritch Contraption</li>
+   </requiredResearchFacilities> -->
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+  </ResearchProjectDef>
+
+
+ 
+
+</Defs>

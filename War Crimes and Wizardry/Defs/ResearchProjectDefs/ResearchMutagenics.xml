@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <ResearchProjectDef>
+
+
+    <defName>UnrestrictedExperimentation</defName>
+    <label>Unrestricted Experimentation</label>
+    <tab>WCNWizardry</tab>
+    <description>We can further our understanding of chemicals if we just stop worrying about the consequences for the test subject. Unlocks new experimental drugs.</description>
+    <baseCost>1400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName></defName>
+    <label>Mutagenics</label>
+    <tab>WCNWizardry</tab>
+    <description>We have discovered compounds that cause mutations that aren't immediately fatal...most of the time. Unlocks basic mutagenic drugs and plantable compounds.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>UnrestrictedExperimentation</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+ 
+   <ResearchProjectDef>
+    <defName>RaiderPacification</defName>
+    <label>Raider Pacification</label>
+    <tab>WCNWizardry</tab>
+    <description>We need to more research subjects. We can make better weapons for incapacitating, but not killing, raiders. Unlocks Force Shotgun.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>UnrestrictedExperimentation</li>
+    </prerequisites>
+    <researchViewX>1.20</researchViewX>
+    <researchViewY>2.75</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MutagenicImplants</defName>
+    <label>Mutagenic Implants</label>
+    <tab>WCNWizardry</tab>
+    <description>We have made many new discoveries through our mutagenic experiments. We can now create mutated organs for our colonists. Unlocks Minor Mutagenic implants.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Mutagenics</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+
+  <ResearchProjectDef>
+    <defName>BareMetalCybernetics</defName>
+    <label>Bare Metal Cybernetics</label>
+    <tab>WCNWizardry</tab>
+    <description>Regular bionics trade efficiency for saftey. We aim to remedy that mistake. Unlocks special cybernetics.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Fabrication</li>
+      <li>MutagenicImplants</li>
+    </prerequisites>
+    <hiddenPrerequisites>
+      <li>Prosthetics</li>
+    </hiddenPrerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+    <ResearchProjectDef>
+    <defName>MutagenicApotheosis</defName>
+    <label>Mutagenic Apotheosis</label>
+    <tab>WCNWizardry</tab>
+    <description>We have reached the pinnical of our mutagenic discoveries. Unlocks final tier of implants and bionics.</description>
+    <baseCost>3500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MultiAnalyzer</li>
+      <li>BareMetalCybernetics</li>
+      <li>MutagenicImplants</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+
+
+
+
+
+
+
+</Defs>

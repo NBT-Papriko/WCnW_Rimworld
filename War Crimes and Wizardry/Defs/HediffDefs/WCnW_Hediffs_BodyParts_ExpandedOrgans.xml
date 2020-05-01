@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Base: Natural body part -->
+
+
+  <!-- Heart -->
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>PituitaryGland</defName>
+    <label>Pituitary Gland</label>
+    <description>A biological human Pituitary Gland. Regulates several hormones.</description>
+    <descriptionHyperlinks><RecipeDef>InstallNaturalPituitaryGland</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartNaturalBase">
+    <defName>InstallNaturalPituitaryGland</defName>
+    <label>install Pituitary Gland</label>
+    <description>Install a biological Pituitary Gland.</description>
+    <descriptionHyperlinks><ThingDef>PituitaryGland</ThingDef></descriptionHyperlinks>
+    <jobString>Installing Pituitary Gland.</jobString>
+    <deathOnFailedSurgeryChance>0.35</deathOnFailedSurgeryChance>
+    <skillRequirements>
+      <Medicine>9</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PituitaryGland</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PituitaryGland</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>PituitaryGland</li>
+    </appliedOnFixedBodyParts>
+  </RecipeDef>
+
+
+
+</Defs>

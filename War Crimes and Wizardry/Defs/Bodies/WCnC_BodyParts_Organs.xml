@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>PituitaryGland</defName>
+    <label>Pituitary Gland</label>
+    <hitPoints>3</hitPoints>
+    <bleedRate>1</bleedRate>
+    <skinCovered>false</skinCovered>
+    <spawnThingOnRemoved>PituitaryGland</spawnThingOnRemoved>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Carcinoma</defName>
+    <label>Tumor</label>
+    <hitPoints>3</hitPoints>
+    <bleedRate>1</bleedRate>
+    <skinCovered>false</skinCovered>
+    <spawnThingOnRemoved>Heart</spawnThingOnRemoved>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  
+</Defs>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>MutationMinor</defName>
+    <label>Minor Mutation</label>
+    <hitPoints>10</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+    <BodyPartDef>
+    <defName>MutationMajor</defName>
+    <label>Major Mutation</label>
+    <hitPoints>10</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+    <BodyPartDef>
+    <defName>MutationApo</defName>
+    <label>Apothesis Mutation</label>
+    <hitPoints>10</hitPoints>
+    <skinCovered>true</skinCovered>
+    <canSuggestAmputation>false</canSuggestAmputation>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>MantleReinforcement</defName>
+    <label>Mantle Reinforcement</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>false</skinCovered>
+     <destroyableByDamage>true</destroyableByDamage>
+    <tags>
+      <li>ManipulationLimbSegment</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>ExtraneousLimb</defName>
+    <label>Extraneous Limb</label>
+    <hitPoints>30</hitPoints>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+
+
+
+</Defs>

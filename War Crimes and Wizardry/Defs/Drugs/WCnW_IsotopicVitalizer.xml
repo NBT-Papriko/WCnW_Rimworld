@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+   <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>IsotopicVitalizer</defName>
+    <label>Isotopic Vitalizer</label>
+    <description>A drug made from irradiated enzynes isolated from heart tissue.\n\nThis drug will eventually cause cancer.</description>
+    <descriptionHyperlinks><HediffDef>IsotopicVitalizerHigh</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/Penoxycyline</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>600</WorkToMake>
+      <MarketValue>18</MarketValue>
+      <Mass>0.005</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>IsotopicVitalizerHigh</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>UnrestrictedExperimentation</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>2</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <HediffDef>
+    <defName>IsotopicVitalizerHigh</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>IsotopicVitalizer</label>
+    <description>The Vitalizer is empowering your heart and veins.</description>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.00</severityPerDay>
+      </li>
+    </comps>
+            <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>Carcinoma</hediff>
+        <minSeverity>0.50</minSeverity>
+        <baseMtbDays>1</baseMtbDays>
+        <partsToAffect>
+          <li>Heart</li>
+        </partsToAffect>
+      </li>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>Carcinoma</hediff>
+        <minSeverity>0.50</minSeverity>
+        <baseMtbDays>1</baseMtbDays>
+        <partsToAffect>
+          <li>PituitaryGland</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+
+      <stages>
+        <li>
+          <painFactor>0.1</painFactor>
+          <totalBleedFactor>0.1</totalBleedFactor>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.05</offset>
+            </li>
+            <li>
+              <capacity>BloodPumping</capacity>
+              <offset>3.00</offset>
+            </li>
+          </capMods>
+        </li>
+
+      </stages>
+  </HediffDef> 
+</Defs>

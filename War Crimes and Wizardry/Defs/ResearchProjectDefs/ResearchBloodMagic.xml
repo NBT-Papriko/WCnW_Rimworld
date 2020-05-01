@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <ResearchProjectDef>
+    <defName>RitualHarvesting</defName>
+    <label>Ritual Harvesting</label>
+    <tab>WCNWizardry</tab>
+    <description>Take the first steps to unlocking the vast powers of blood. First, you need a sacrificial altar to harvest blood and produce Bloodstones.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>Smithing</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>BloodMagicPlaceholder</defName>
+    <label>BloodMagic Placeholder </label>
+    <tab>WCNWizardry</tab>
+    <description>This will one day be something.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>RitualHarvesting</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+  </ResearchProjectDef>
+ 
+
+</Defs>

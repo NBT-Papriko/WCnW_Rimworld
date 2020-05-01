@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>AmbrosiaCordial</defName>
+    <label>Ambrosia Cordial</label>
+    <description>A multi-step process distills the most mood elevating proerties of Ambrosia. In order to keep it stable, the product is disolved into a leaded alcohol solution.It isn't any more addictive than regular Ambrosia, but it gives a much stronger mood boost. The side-effects haven't been noted, but they are certainly severe.</description>
+    <descriptionHyperlinks>
+      <HediffDef>AmbrosiaCordialHigh</HediffDef>
+      <HediffDef>AmbrosiaCordialTolerance</HediffDef>
+      <HediffDef>AmbrosiaCordialAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <tradeability>Sellable</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/Beer</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>21</MarketValue>
+      <Mass>0.1</Mass>
+      <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>0.1</Nutrition>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <baseIngestTicks>100</baseIngestTicks>
+      <chairSearchRadius>4</chairSearchRadius>
+      <preferability>DesperateOnly</preferability>
+      <tasteThought></tasteThought>
+      <foodType>VegetableOrFruit</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.75</joy>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>AmbrosiaCordialHigh</hediffDef>
+          <severity>0.50</severity>
+          <toleranceChemical>AmbrosiaCordial</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>AmbrosiaCordialTolerance</hediffDef>
+          <severity>0.06</severity>
+          <divideByBodySize>true</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li Class="CompProperties_Drug">
+        <chemical>AmbrosiaCordial</chemical>
+        <addictiveness>0.010</addictiveness>
+        <minToleranceToAddict>0.25</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>1</needLevelOffset>
+        <listOrder>30</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>AmbrosiaCordialHigh</defName>
+    <label>Cordial Glow</label>
+    <description>This cocktail of poorly studied chemicals sure does feel great!</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.75</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li/>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>AmbrosiaCordialHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>AmbrosiaCordialHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Cordial Glow</label>
+        <description>I feel so good that I barely notice the strange buzzing in my stomach.</description>
+        <baseMoodEffect>24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Ambrosia addiction -->
+  
+  <ChemicalDef>
+    <defName>AmbrosiaCordial</defName>
+    <label>ambrosia cordial</label>
+    <addictionHediff>AmbrosiaCordialAddiction</addictionHediff>
+    <toleranceHediff>AmbrosiaCordialTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_AmbrosiaCordial</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>Ambrosia Cordial</label>
+    <description>Because of an ambrosia cordial addiction, this person needs to regularly consume the cordial to avoid withdrawal symptoms.</description>
+    <listPriority>20</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>AmbrosiaCordialTolerance</defName>
+    <label>Ambrosia Cordial tolerance</label>
+    <description>A built-up tolerance to ambrosia cordial. The more severe this tolerance is, the more cordial it takes to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.020</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>AmbrosiaCordial</chemical>
+      </li>
+    </comps>
+        <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>Carcinoma</hediff>
+        <minSeverity>0.50</minSeverity>
+        <baseMtbDays>1</baseMtbDays>
+        <partsToAffect>
+          <li>Stomach</li>
+        </partsToAffect>
+      </li>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>Carcinoma</hediff>
+        <minSeverity>0.50</minSeverity>
+        <baseMtbDays>1</baseMtbDays>
+        <partsToAffect>
+          <li>PituitaryGland</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>AmbrosiaCordialAddiction</defName>
+    <label>Ambrosia Cordial addiction</label>
+    <description>A chemical addiction to ambrosia cordial. Long-term presence of the cordial has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of ambrosia cordial, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>Chemical_AmbrosiaCordial</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>AmbrosiaCordialWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>AmbrosiaCordialAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>Ambrosia Cordial withdrawal</label>
+        <description>I feel like my light has been taken away, but at least the buzzing has stopped.</description>
+        <baseMoodEffect>-17</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
